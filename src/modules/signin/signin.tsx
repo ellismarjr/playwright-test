@@ -1,4 +1,12 @@
+import { useToast } from '../../core/hooks/useToast/useToast';
+
 export function SignIn() {
+  const { toast } = useToast();
+
+  function onHandleSignIn() {
+    toast.success('Welcome to your workspace!', 'Enjoy your adventure.');
+  }
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-950">
       <form className="flex flex-col gap-4 bg-gray-900 min-w-96 shadow-md rounded p-8">
@@ -13,8 +21,10 @@ export function SignIn() {
             type="password" placeholder="********" />
         </div>
 
-        <button className="w-full py-3 bg-violet-600 rounded-md text-gray-50 font-semibold hover:bg-violet-700 transition-all"
-          type="submit">SIGNIN</button>
+        <button
+          className="w-full py-3 bg-violet-600 rounded-md text-gray-50 font-semibold hover:bg-violet-700 transition-all"
+          type="button"
+          onClick={onHandleSignIn}>SIGNIN</button>
       </form>
     </div>
   );

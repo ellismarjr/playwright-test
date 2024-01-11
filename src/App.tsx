@@ -1,9 +1,13 @@
+import { Toaster } from 'sonner';
 import { SignIn } from './modules/signin';
 import './styles/index.css';
 
 function App() {
   return (
-    <SignIn />
+    <>
+      <SignIn />
+      <Toaster position='top-right' offset={40} />
+    </>
   )
 }
 

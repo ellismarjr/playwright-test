@@ -10,10 +10,13 @@ test.describe('Signin', () => {
     await expect(page.getByRole('button', { name: 'SIGNIN' })).toBeVisible();
   });
 
-  test('should signin when fullfil all fields', async ({ page }) => {
+  test('should be able to signin when fullfil all fields', async ({ page }) => {
     await page.goto('/');
     await page.getByPlaceholder('E-mail').fill('john.doe@email.com');
     await page.getByPlaceholder('********').fill('123456');
+    await page.getByRole('button', { name: 'SIGNIN' }).click();
+    await expect(page.getByText('Welcome to your workspace!')).toBeVisible();
+    await expect(page.getByText('Enjoy your adventure.')).toBeVisible();
   });
 });
 
