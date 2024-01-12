@@ -1,11 +1,11 @@
 import { Toaster } from 'sonner';
-import { SignIn } from './modules/signin';
 import './styles/index.css';
+import { Router } from './routes';
 
 function App() {
   return (
     <>
-      <SignIn />
+      <Router />
       <Toaster position='top-right' offset={40} />
     </>
   )
